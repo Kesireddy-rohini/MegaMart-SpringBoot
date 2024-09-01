@@ -1,5 +1,7 @@
 package com.megamart.dao;
 
+import java.util.ArrayList;
+
 import com.megamart.entity.Product;
 
 public interface MegaMartDao {
@@ -11,5 +13,11 @@ public interface MegaMartDao {
 	public void deleteProduct(int productId);
 
 	public Product updateProduct(Product product);
+	
+	public ArrayList<Product> getProductByName(String productName);
+
+	public ArrayList<Product> findByProductPrice(float productPrice);
+
+	public ArrayList<String> findByQuantityAndRating(int quantity, float rating);
 
 }

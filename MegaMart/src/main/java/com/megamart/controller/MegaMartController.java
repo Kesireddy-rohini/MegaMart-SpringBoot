@@ -1,5 +1,7 @@
 package com.megamart.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,5 +48,26 @@ public class MegaMartController {
 		
 	}
 	
+	@GetMapping("/getProductsByName")
+	public ArrayList<Product> getProductByName(@RequestParam String productName){
+		
+		return megaMartService.getProductByName(productName);
+		
+	}
+	
+	@GetMapping("/findByProductPrice")
+	public ArrayList<Product> findByProductPrice(@RequestParam float productPrice){
+		return megaMartService.findByProductPrice(productPrice);
+	}
+	
+	@GetMapping("/findByQuantityAndRating")
+	public ArrayList<String> findByQuantityAndRating(@RequestParam int quantity , @RequestParam float rating){
+		return megaMartService.findByProductPrice(quantity,rating);
+			
+		
+		}
+		
+	}
+	
 
-}
+

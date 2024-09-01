@@ -1,60 +1,29 @@
 package com.megamart.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 	
 	@Id
 	@GeneratedValue
 	private int productId;
 	
+	@Column(name = "productName")
 	private String productName;
 	private String productDescription;
 	private float productPrice;
+	private int quantity;
+	private float rating;
+	private int category;
 	
-
-	
-	public Product() {
-		super();
 	}
-	
-	
-	public Product(int productId, String productName, String productDescription, float productPrice) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.productDescription = productDescription;
-		this.productPrice = productPrice;
-	}
-	
-	public int getProductId() {
-		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public String getProductDescription() {
-		return productDescription;
-	}
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
-	}
-	public float getProductPrice() {
-		return productPrice;
-	}
-	public void setProductPrice(float productPrice) {
-		this.productPrice = productPrice;
-	}
-	
-	
-
-}

@@ -1,5 +1,7 @@
 package com.megamart.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,24 @@ public class MegaMartServiceImpl implements MegaMartService {
 	public Product updateProduct(Product product) {
 		
 		return megaMartDao.updateProduct(product);
+	}
+
+	@Override
+	public ArrayList<Product> getProductByName(String productName) {
+		
+		return megaMartDao.getProductByName(productName);
+	}
+
+	@Override
+	public ArrayList<Product> findByProductPrice(float productPrice) {
+		
+		return megaMartDao.findByProductPrice(productPrice);
+	}
+
+	@Override
+	public ArrayList<String> findByProductPrice(int quantity, float rating) {
+		return megaMartDao.findByQuantityAndRating(quantity, rating);
+		
 	}
 
 }
